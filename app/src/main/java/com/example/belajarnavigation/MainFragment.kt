@@ -27,5 +27,13 @@ class MainFragment : Fragment() {
             // Send action to Navigation.navController
             Navigation.findNavController(it).navigate(action)
         }
+
+        // Add buttonOptions click listener to navigate to OptionsFragment
+        buttonOptions.setOnClickListener {
+            // Get action to display or show dialog
+            val action = MainFragmentDirections.actionOptionFragment()
+            // Send action to Navigation.navController
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 }
