@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_game"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/itemHome">
 
     <fragment
-        android:id="@+id/mainFragment"
+        android:id="@+id/itemHome"
         android:name="com.example.belajarnavigation.MainFragment"
         android:label="Main Screen"
         tools:layout="@layout/fragment_main">
@@ -29,8 +29,8 @@
             app:destination="@id/resultFragment" />
         <action
             android:id="@+id/actionBackMainFragment"
-            app:destination="@id/mainFragment"
-            app:popUpTo="@id/mainFragment" />
+            app:destination="@id/itemHome"
+            app:popUpTo="@id/itemHome" />
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
@@ -39,12 +39,22 @@
         tools:layout="@layout/fragment_result" >
         <action
             android:id="@+id/actionMainFragment"
-            app:destination="@id/mainFragment"
-            app:popUpTo="@id/mainFragment"
+            app:destination="@id/itemHome"
+            app:popUpTo="@id/itemHome"
             app:popUpToInclusive="false" />
         <argument
             android:name="playerScore"
             app:argType="integer"
             android:defaultValue="0" />
     </fragment>
+    <fragment
+        android:id="@+id/itemHistory"
+        android:name="com.example.belajarnavigation.HistoryFragment"
+        android:label="History Screen"
+        tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/itemProfile"
+        android:name="com.example.belajarnavigation.ProfileFragment"
+        android:label="Profile Screen"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
