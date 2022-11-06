@@ -21,7 +21,9 @@ class MainActivity : AppCompatActivity() {
                 as NavHostFragment).navController
 
         // Setup ActionBarWithNavController using navController
-        NavigationUI.setupActionBarWithNavController(this, navController)
+        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
+        // Setup NavigationView using navController
+        NavigationUI.setupWithNavController(navView, navController)
 
         // Connecting NavController to BottomNavBar
         bottomNav.setupWithNavController(navController)
@@ -29,6 +31,11 @@ class MainActivity : AppCompatActivity() {
 
     // Override onSupportNavigateUp()
     override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp()
+        // Override navigateUp from NavigationUI using navController and drawerLayout
+        // or use navController.navigateUp(drawerLayout) import NavigateUI.navigateUp()
+        return NavigationUI.navigateUp(navController, drawerLayout)
+                // If user is on top level / lowest backstack then hamburger menu will pop out
+                // instead of navigate up
+                || super.onSupportNavigateUp()
     }
 }
