@@ -28,8 +28,8 @@ class GameFragment : Fragment() {
             txtPlayerName.text = "$playerName's turn"
         }
 
-        val num1 = Random(100).nextInt()
-        val num2 = Random(100).nextInt()
+        val num1 = (0..100).random()
+        val num2 = (0..100).random()
 
         txtAngka.text = "$num1 + $num2"
 
