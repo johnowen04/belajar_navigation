@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/.dev/android-projects/BelajarNavigation/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2385" />
+        <entry key="..\:/.dev/android-projects/BelajarNavigation/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.2385" />
         <entry key="..\:/.dev/android-projects/BelajarNavigation/app/src/main/res/layout/activity_main.xml" value="0.38697916666666665" />
         <entry key="..\:/.dev/android-projects/BelajarNavigation/app/src/main/res/layout/fragment_game.xml" value="0.38697916666666665" />
         <entry key="..\:/.dev/android-projects/BelajarNavigation/app/src/main/res/layout/fragment_main.xml" value="0.38697916666666665" />
