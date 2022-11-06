@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.fragment_game.*
+import kotlin.random.Random
 
 class GameFragment : Fragment() {
     override fun onCreateView(
@@ -27,9 +28,19 @@ class GameFragment : Fragment() {
             txtPlayerName.text = "$playerName's turn"
         }
 
+        val num1 = Random(100).nextInt()
+        val num2 = Random(100).nextInt()
+
+        txtAngka.text = "$num1 + $num2"
+
         buttonSubmit.setOnClickListener {
+            // Evaluate answer and get score
+            val result = num1 + num2
+            val answer = editAnswer.text.toString().toInt()
+            val score = if (result == answer) 100 else 0
+
             // Get which action to run
-            val action = GameFragmentDirections.actionMainFragment()
+            val action = GameFragmentDirections.actionResultFragment(score)
             // Send action to Navigation.navController
             Navigation.findNavController(it).navigate(action)
         }

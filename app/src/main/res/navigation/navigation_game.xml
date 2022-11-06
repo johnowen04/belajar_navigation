@@ -21,13 +21,24 @@
         android:name="com.example.belajarnavigation.GameFragment"
         android:label="Game Screen"
         tools:layout="@layout/fragment_game">
-        <action
-            android:id="@+id/actionMainFragment"
-            app:destination="@id/mainFragment"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right" />
         <argument
             android:name="playerName"
             app:argType="string" />
+        <action
+            android:id="@+id/actionResultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.belajarnavigation.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" >
+        <action
+            android:id="@+id/actionMainFragment"
+            app:destination="@id/mainFragment" />
+        <argument
+            android:name="playerScore"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
 </navigation>
