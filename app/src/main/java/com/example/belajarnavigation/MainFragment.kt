@@ -20,8 +20,10 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         buttonStart.setOnClickListener {
-            // Get which action to run
-            val action = MainFragmentDirections.actionGameFragment()
+            // Get playerName from editName
+            val playerName = editName.text.toString()
+            // Get which action to run and pass argument (if any) to action
+            val action = MainFragmentDirections.actionGameFragment(playerName)
             // Send action to Navigation.navController
             Navigation.findNavController(it).navigate(action)
         }

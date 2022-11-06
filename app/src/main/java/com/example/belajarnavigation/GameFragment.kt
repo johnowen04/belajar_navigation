@@ -19,6 +19,14 @@ class GameFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Get argument from arguments var
+        arguments.let {
+            // Get argument from GameFragmentArgs
+            val playerName = GameFragmentArgs.fromBundle(requireArguments()).playerName
+            txtPlayerName.text = "$playerName's turn"
+        }
+
         buttonBack.setOnClickListener {
             // Get which action to run
             val action = GameFragmentDirections.actionMainFragment()
