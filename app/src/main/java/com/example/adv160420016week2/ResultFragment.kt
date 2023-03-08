@@ -1,4 +1,4 @@
-package com.example.belajarnavigation
+package com.example.adv160420016week2
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,15 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.fragment_game.*
-import kotlin.random.Random
+import kotlinx.android.synthetic.main.fragment_result.*
 
-class GameFragment : Fragment() {
+class ResultFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_game, container, false)
+        return inflater.inflate(R.layout.fragment_result, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -24,23 +24,13 @@ class GameFragment : Fragment() {
         // Get argument from arguments var
         arguments.let {
             // Get argument from GameFragmentArgs
-            val playerName = GameFragmentArgs.fromBundle(requireArguments()).playerName
-            txtPlayerName.text = "$playerName's turn"
+            val playerScore = ResultFragmentArgs.fromBundle(requireArguments()).playerScore
+            txtScore.text = "Your score is $playerScore"
         }
 
-        val num1 = (0..100).random()
-        val num2 = (0..100).random()
-
-        txtAngka.text = "$num1 + $num2"
-
-        buttonSubmit.setOnClickListener {
-            // Evaluate answer and get score
-            val result = num1 + num2
-            val answer = editAnswer.text.toString().toInt()
-            val score = if (result == answer) 100 else 0
-
+        buttonBack.setOnClickListener {
             // Get which action to run
-            val action = GameFragmentDirections.actionResultFragment(score)
+            val action = ResultFragmentDirections.actionMainFragment()
             // Send action to Navigation.navController
             Navigation.findNavController(it).navigate(action)
         }

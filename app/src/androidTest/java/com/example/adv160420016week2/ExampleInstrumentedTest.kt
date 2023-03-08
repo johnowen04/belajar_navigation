@@ -1,4 +1,4 @@
-package com.example.belajarnavigation
+package com.example.adv160420016week2
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

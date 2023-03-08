@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.belajarnavigation.MainFragment"
+        android:name="com.example.adv160420016week2.MainFragment"
         android:label="Main Screen"
         tools:layout="@layout/fragment_main">
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
-        android:name="com.example.belajarnavigation.GameFragment"
+        android:name="com.example.adv160420016week2.GameFragment"
         android:label="Game Screen"
         tools:layout="@layout/fragment_game">
         <argument
@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
-        android:name="com.example.belajarnavigation.ResultFragment"
+        android:name="com.example.adv160420016week2.ResultFragment"
         android:label="fragment_result"
         tools:layout="@layout/fragment_result" >
         <action
